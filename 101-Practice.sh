@@ -11,7 +11,7 @@ day=$(date +%A)
 echo "Today is $day"
 
 # Check if today is Sunday
-if [ "$day" eq "Sunday" ]
+if [ "$day" :eq :"Sunday" ]
 then
     echo "It's a holiday!"
 else
