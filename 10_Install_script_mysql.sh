@@ -39,3 +39,4 @@ else
 fi
 
 
+# sudo sh 10_Install_script_mysql.sh -->use this command to run the script with sudo privileges
