@@ -11,9 +11,13 @@ day=$(date +%A)
 echo "Today is $day"
 
 # Check if today is Sunday
-if [ "$day" -eq "Sunday" ]
+if [ "$day" = "Sunday" ]
 then
     echo "It's a holiday!"
 else
     echo "It's a working day."
 fi
+
+
+#-eq is for numeric comparison, not strings.
+# To compare strings inside [ ], you should use =
