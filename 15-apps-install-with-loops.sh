@@ -33,9 +33,10 @@ CHECK_ROOT(){
 
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
+echo "Script started executing at: $TIMESTAMP"
 CHECK_ROOT
 
-for package in $@
+for package in $@ #it is a list of packages passed as arguments, it changed the entire script to accept multiple packages
 do
     dnf list installed $package &>>$LOG_FILE_NAME
     if [ $? -ne 0 ]
@@ -46,3 +47,5 @@ do
         echo -e "$package is already $Y ... INSTALLED $N"
     fi
 done
+
+echo "Script completed executing at: $TIMESTAMP"
