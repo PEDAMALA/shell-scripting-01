@@ -7,11 +7,13 @@ Y="\e[33m"
 N="\e[0m"
 
 LOGS_FOLDER="/var/log/shellscript-logs"
+mkdir -p $LOGS_FOLDER # be careful here, if it is not mentioned , the script will not work as expected 
+                      # and here -P means pass or skip the process if the folder already exists
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
-mkdir -p $LOGS_FOLDER # be careful here, if it is not mentioned , the script will not work as expected 
-# and here -P means pass or skip the process if the folder already exists
+
+
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
