@@ -49,3 +49,5 @@ then
 else
     echo -e "Git is already ... $Y INSTALLED $N"
 fi
+
+echo "Script completed execution at: $TIMESTAMP" &>>$LOG_FILE_NAME
