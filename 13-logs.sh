@@ -10,7 +10,8 @@ LOGS_FOLDER="/var/log/shellscript-logs"
 LOG_FILE=$(echo $0 | cut -d "." -f1 )
 TIMESTAMP=$(date +%Y-%m-%d-%H-%M-%S)
 LOG_FILE_NAME="$LOGS_FOLDER/$LOG_FILE-$TIMESTAMP.log"
-mkdir -p $LOGS_FOLDER # be careful here, if this fails, the script will not work as expected
+mkdir -p $LOGS_FOLDER # be careful here, if it is not mentioned , the script will not work as expected 
+# and here -P means pass or skip the process if the folder already exists
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -21,6 +22,7 @@ VALIDATE(){
     fi
 }
 
+echo "Script started executing at: $TIMESTAMP"
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 if [ $USERID -ne 0 ]
@@ -51,3 +53,4 @@ else
 fi
 
 echo "Script completed execution at: $TIMESTAMP" &>>$LOG_FILE_NAME
+echo "Script completed execution at: $TIMESTAMP"
