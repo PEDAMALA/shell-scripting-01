@@ -42,7 +42,7 @@ systemctl enable mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "Enabling MySQL Server"
 
 systemctl restart mysqld &>>$LOG_FILE_NAME
-VALIDATE $? "Retarting MySQL Server"
+VALIDATE $? "Restarting MySQL Server"
 
 mysql -h mysql.daws82s.online -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE_NAME
 
