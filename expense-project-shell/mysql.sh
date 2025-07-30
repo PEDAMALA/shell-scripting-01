@@ -55,4 +55,5 @@ else
     echo -e "MySQL Root password already setup ... $Y SKIPPING $N"
 fi
 
-echo "Script completed executing at: $TIMESTAMP"
+TIMESTAMP1=$(date +%Y-%m-%d-%H-%M-%S)
+echo "Script completed executing at: $TIMESTAMP1"
