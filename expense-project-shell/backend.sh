@@ -29,6 +29,7 @@ CHECK_ROOT(){
         exit 1 #other than 0
     fi
 }
+
 mkdir -p LOGS_FOLDER # here -P means pass or skip the process if the folder already exists
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
