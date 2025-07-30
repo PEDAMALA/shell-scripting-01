@@ -29,6 +29,7 @@ CHECK_ROOT(){
     fi
 }
 
+echo "Script started executing at: $TIMESTAMP"
 echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 CHECK_ROOT
@@ -53,3 +54,4 @@ else
     echo -e "MySQL Root password already setup ... $Y SKIPPING $N"
 fi
 
+echo "Script completed executing at: $TIMESTAMP"
