@@ -44,12 +44,12 @@ VALIDATE $? "Enabling MySQL Server"
 systemctl restart mysqld &>>$LOG_FILE_NAME
 VALIDATE $? "Restarting MySQL Server"
 
-mysql -h mysql.daws82s.online -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE_NAME
+mysql -h mysql.psk135.tech -u root -pExpenseApp@1 -e 'show databases;' &>>$LOG_FILE_NAME # here mysql.psk135.tech
 
 if [ $? -ne 0 ]
 then
-    echo "MySQL Root password not setup" &>>$LOG_FILE_NAME
-    mysql_secure_installation --set-root-pass ExpenseApp@1
+    echo "MySQL Root password not setup" 
+    mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOG_FILE_NAME
     VALIDATE $? "Setting Root Password"
 else
     echo -e "MySQL Root password already setup ... $Y SKIPPING $N"
