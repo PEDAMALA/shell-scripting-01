@@ -5,8 +5,8 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 
-SOURCE_DIR=$1
-DEST_DIR=$2
+SOURCE_DIR=$1 # /home/ec2-user/app-logs
+DEST_DIR=$2 # /home/ec2-user/archieve
 DAYS=${3:-14} # if user is not providing number of days, we are taking 14 as default
 
 LOGS_FOLDER="/home/ec2-user/shellscript-logs"
@@ -43,7 +43,13 @@ echo "Script started executing at: $TIMESTAMP" &>>$LOG_FILE_NAME
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
-if [ -n "$FILES" ] # true if there are files to zip
+if [ -n "$FILES" ] # true if there are files to zip and Here double quotes are important
+then
+    echo "Files to be backed up: $FILES" &>>$LOG_FILE_NAME
+else
+    echo -e "$R No files found older than $DAYS days in $SOURCE_DIR $N"
+    exit 0
+fi
 then
     echo "Files are: $FILES"
     ZIP_FILE="$DEST_DIR/app-logs-$TIMESTAMP.zip"
