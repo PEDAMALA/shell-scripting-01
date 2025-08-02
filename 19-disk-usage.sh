@@ -11,10 +11,10 @@ do
     #echo "Partition: $PARTITION , Usage: $USAGE"
     if [ $USAGE -ge $DISK_THRESHOLD ]
     then
-        MSG+="High Disk usage on partition: $PARTITION Usage is: $USAGE \n "
+        MSG+="High Disk usage on partition: $PARTITION Usage is: $USAGE \n " # here += is used to append to the message and \n is used to add a new line
     fi
 done <<< $DISK_USAGE
 
 echo -e "Message: $MSG"
 
-echo "$MSG" | mutt -s "High Disk Usage" info@joindevops.com
+echo "$MSG" | mutt -s "High Disk Usage" pvssai135@gmail.com
