@@ -6,7 +6,7 @@ Y="\e[33m"
 N="\e[0m"
 
 SOURCE_DIR=$1 # /home/ec2-user/app-logs
-DEST_DIR=$2 # /home/ec2-user/archieve
+DEST_DIR=$2 # /home/ec2-user/archive
 DAYS=${3:-14} # if user is not providing number of days, we are taking 14 as default
 
 LOGS_FOLDER="/home/ec2-user/shellscript-logs"
