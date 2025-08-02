@@ -2,9 +2,9 @@
 
 MSG="SCRIPT1"
 GREET="Hi from SCRIPT-1"
-#source ./21-script-2.sh
+source ./21-script-2.sh # This will execute 21-script-2.sh and print its output
 
 echo "Hello from: $MSG"
-#echo "A value: $A"
+echo "A value: $A"
 
-sh 21-script-2.sh
+#sh 21-script-2.sh
